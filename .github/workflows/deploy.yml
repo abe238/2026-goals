@@ -41,6 +41,14 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
+      - name: Make package public
+        run: |
+          curl -X PATCH \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/user/packages/container/2026-goals \
+            -d '{"visibility":"public"}' || true
+
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
