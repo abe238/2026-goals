@@ -27,27 +27,31 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Delete old package
+        continue-on-error: true
+        run: |
+          gh api -X DELETE /user/packages/container/2026-goals --silent || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: docker/metadata-action@v5
         id: meta
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: type=raw,value=latest
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.description=Momentum 2026 - Anti-guilt life management
+            org.opencontainers.image.licenses=MIT
 
       - uses: docker/build-push-action@v5
         with:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-      - name: Make package public
-        run: |
-          curl -X PATCH \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/user/packages/container/2026-goals \
-            -d '{"visibility":"public"}' || true
 
   deploy:
     needs: build-and-push
@@ -58,12 +62,8 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-          envs: CR_PAT
           script: |
-            echo "$CR_PAT" | docker login ghcr.io -u abe238 --password-stdin
             cd /var/www/2026-goals
             docker compose pull
             docker compose up -d
             docker restart coolify-proxy
-        env:
-          CR_PAT: ${{ secrets.CR_PAT }}
