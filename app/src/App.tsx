@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
+import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom'
 import {
   Home,
   Mic,
@@ -17,12 +17,15 @@ import {
   LifeDomains,
   NudgesCoaching,
   Settings,
+  Login,
 } from '@/pages'
+import { useAuth } from '@/context'
 import type { NavigationItem } from '@/types'
 
-function App() {
+function ProtectedRoutes() {
   const navigate = useNavigate()
   const location = useLocation()
+  const { user, logout } = useAuth()
 
   const navigationItems: NavigationItem[] = [
     {
@@ -74,13 +77,14 @@ function App() {
   }
 
   const handleLogout = () => {
-    console.log('Logout clicked')
+    logout()
+    navigate('/login')
   }
 
   return (
     <AppShell
       navigationItems={navigationItems}
-      user={{ name: 'Abe' }}
+      user={{ name: user?.name || 'User' }}
       onNavigate={navigate}
       onLogout={handleLogout}
       onVoiceCapture={handleVoiceCapture}
@@ -95,6 +99,25 @@ function App() {
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </AppShell>
+  )
+}
+
+function App() {
+  const { user, isLoading } = useAuth()
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-gold">Loading...</div>
+      </div>
+    )
+  }
+
+  return (
+    <Routes>
+      <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
+      <Route path="/*" element={user ? <ProtectedRoutes /> : <Navigate to="/login" />} />
+    </Routes>
   )
 }
 
