@@ -1,0 +1,261 @@
+{
+  "_meta": {
+    "models": {
+      "workBalance": "Weekly strategic vs reactive work time allocation.",
+      "workEntries": "Individual work sessions logged by type.",
+      "leadershipWins": "Leadership moments and achievements.",
+      "teamMembers": "Direct reports and key collaborators.",
+      "impactEvidence": "Collected evidence for career progression."
+    },
+    "relationships": [
+      "WorkEntries contribute to WorkBalance calculations",
+      "LeadershipWins can become ImpactEvidence",
+      "TeamMembers track interaction health over time"
+    ]
+  },
+  "workBalance": {
+    "weekStart": "2026-01-05",
+    "strategicMinutes": 480,
+    "reactiveMinutes": 720,
+    "strategicPercentage": 40,
+    "trend": [28, 32, 35, 40],
+    "targetPercentage": 40
+  },
+  "workEntries": [
+    {
+      "id": "work-001",
+      "type": "strategic",
+      "description": "Q1 roadmap planning session with product leads",
+      "timestamp": "2026-01-09T10:00:00",
+      "durationMinutes": 120,
+      "tags": ["planning", "cross-functional"]
+    },
+    {
+      "id": "work-002",
+      "type": "reactive",
+      "description": "Production incident triage and resolution",
+      "timestamp": "2026-01-09T14:00:00",
+      "durationMinutes": 90,
+      "tags": ["incident", "urgent"]
+    },
+    {
+      "id": "work-003",
+      "type": "strategic",
+      "description": "1:1 prep and career development discussions",
+      "timestamp": "2026-01-08T09:00:00",
+      "durationMinutes": 60,
+      "tags": ["leadership", "team"]
+    },
+    {
+      "id": "work-004",
+      "type": "reactive",
+      "description": "Unplanned stakeholder meeting on timeline concerns",
+      "timestamp": "2026-01-08T15:00:00",
+      "durationMinutes": 45,
+      "tags": ["stakeholder"]
+    },
+    {
+      "id": "work-005",
+      "type": "strategic",
+      "description": "Architecture review for new authentication system",
+      "timestamp": "2026-01-07T11:00:00",
+      "durationMinutes": 90,
+      "tags": ["technical", "architecture"]
+    },
+    {
+      "id": "work-006",
+      "type": "reactive",
+      "description": "Escalation call with customer success",
+      "timestamp": "2026-01-07T16:00:00",
+      "durationMinutes": 30,
+      "tags": ["escalation", "customer"]
+    }
+  ],
+  "leadershipWins": [
+    {
+      "id": "lw-001",
+      "category": "delegation",
+      "description": "Let Marcus lead the incident response instead of jumping in myself",
+      "timestamp": "2026-01-09T14:30:00",
+      "impact": "Team grew confidence, I stayed focused on strategy",
+      "isHighlight": true
+    },
+    {
+      "id": "lw-002",
+      "category": "mentoring",
+      "description": "Coached Sarah through her first architecture presentation",
+      "timestamp": "2026-01-08T10:00:00",
+      "impact": "She nailed it and got positive feedback from VP",
+      "isHighlight": true
+    },
+    {
+      "id": "lw-003",
+      "category": "visibility",
+      "description": "Presented Q4 retrospective to leadership team",
+      "timestamp": "2026-01-06T14:00:00",
+      "impact": "CTO mentioned our team's velocity in all-hands",
+      "isHighlight": true
+    },
+    {
+      "id": "lw-004",
+      "category": "team-support",
+      "description": "Blocked meeting overload for the team during crunch",
+      "timestamp": "2026-01-05T09:00:00",
+      "isHighlight": false
+    },
+    {
+      "id": "lw-005",
+      "category": "strategic-thinking",
+      "description": "Identified automation opportunity that could save 20 hours/week",
+      "timestamp": "2026-01-04T11:00:00",
+      "impact": "VP approved POC for Q1",
+      "isHighlight": true
+    },
+    {
+      "id": "lw-006",
+      "category": "impact",
+      "description": "Shipped feature that reduced customer churn by 8%",
+      "timestamp": "2026-01-03T16:00:00",
+      "impact": "Mentioned in board deck",
+      "isHighlight": true
+    }
+  ],
+  "teamMembers": [
+    {
+      "id": "tm-001",
+      "name": "Marcus Chen",
+      "role": "Senior Engineer",
+      "avatarInitials": "MC",
+      "lastInteraction": "2026-01-09T14:30:00",
+      "connectionHealth": "strong",
+      "recentContext": "Led incident response, doing great"
+    },
+    {
+      "id": "tm-002",
+      "name": "Sarah Kim",
+      "role": "Staff Engineer",
+      "avatarInitials": "SK",
+      "lastInteraction": "2026-01-08T10:00:00",
+      "connectionHealth": "strong",
+      "recentContext": "Architecture presentation went well"
+    },
+    {
+      "id": "tm-003",
+      "name": "James Wilson",
+      "role": "Engineer II",
+      "avatarInitials": "JW",
+      "lastInteraction": "2026-01-03T11:00:00",
+      "connectionHealth": "needs-attention",
+      "recentContext": "Haven't had 1:1 in 2 weeks"
+    },
+    {
+      "id": "tm-004",
+      "name": "Emily Rodriguez",
+      "role": "Senior Engineer",
+      "avatarInitials": "ER",
+      "lastInteraction": "2026-01-07T09:00:00",
+      "connectionHealth": "good",
+      "recentContext": "Working on auth system"
+    },
+    {
+      "id": "tm-005",
+      "name": "David Park",
+      "role": "Engineering Manager",
+      "avatarInitials": "DP",
+      "lastInteraction": "2025-12-20T14:00:00",
+      "connectionHealth": "overdue",
+      "recentContext": "Peer in platform team, should sync"
+    }
+  ],
+  "weeklyIntentions": [
+    {
+      "id": "int-001",
+      "text": "Block 2 hours for Q2 planning draft",
+      "type": "strategic",
+      "isCompleted": true
+    },
+    {
+      "id": "int-002",
+      "text": "Have career conversation with James",
+      "type": "leadership",
+      "isCompleted": false
+    },
+    {
+      "id": "int-003",
+      "text": "Review and delegate at least 2 tasks I would normally do myself",
+      "type": "strategic",
+      "isCompleted": true
+    },
+    {
+      "id": "int-004",
+      "text": "Sync with David on platform roadmap alignment",
+      "type": "leadership",
+      "isCompleted": false
+    }
+  ],
+  "impactEvidence": [
+    {
+      "id": "ev-001",
+      "title": "Reduced customer churn by 8%",
+      "description": "Led initiative to identify and fix top 3 churn drivers. Shipped in Q4, results measured in first month.",
+      "date": "2026-01-03",
+      "category": "impact",
+      "metrics": "8% churn reduction, $240K ARR saved",
+      "isStarred": true
+    },
+    {
+      "id": "ev-002",
+      "title": "Grew team from 4 to 6 engineers",
+      "description": "Designed interview loop, personally closed 2 senior candidates who had competing offers.",
+      "date": "2025-11-15",
+      "category": "team-support",
+      "metrics": "2 senior hires, 0 regrettable attrition",
+      "isStarred": true
+    },
+    {
+      "id": "ev-003",
+      "title": "Established architecture review process",
+      "description": "Created and championed RFC process adopted by 3 other teams.",
+      "date": "2025-10-01",
+      "category": "strategic-thinking",
+      "metrics": "Process adopted org-wide",
+      "isStarred": true
+    },
+    {
+      "id": "ev-004",
+      "title": "Mentored Sarah to Staff promotion",
+      "description": "6-month coaching engagement, she's now leading her own track.",
+      "date": "2025-12-01",
+      "category": "mentoring",
+      "isStarred": true
+    },
+    {
+      "id": "ev-005",
+      "title": "Presented at company all-hands",
+      "description": "Delivered technical deep-dive on platform improvements to 500+ employees.",
+      "date": "2025-09-15",
+      "category": "visibility",
+      "isStarred": false
+    }
+  ],
+  "careerProgress": {
+    "currentLevel": "Director",
+    "targetLevel": "Senior Director",
+    "evidenceCount": 5,
+    "evidenceTarget": 8,
+    "keyMilestones": [
+      { "id": "ms-001", "label": "Cross-functional leadership", "isComplete": true },
+      { "id": "ms-002", "label": "Org-wide impact", "isComplete": true },
+      { "id": "ms-003", "label": "Team scaling", "isComplete": true },
+      { "id": "ms-004", "label": "Executive visibility", "isComplete": false },
+      { "id": "ms-005", "label": "Strategic initiative ownership", "isComplete": false }
+    ]
+  },
+  "stats": {
+    "thisWeekStrategicHours": 8,
+    "thisWeekReactiveHours": 12,
+    "leadershipWinsThisMonth": 6,
+    "teamInteractionsThisWeek": 4,
+    "impactEvidenceTotal": 5
+  }
+}

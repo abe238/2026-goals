@@ -1,0 +1,1 @@
+export { LifeDomains } from './LifeDomains'

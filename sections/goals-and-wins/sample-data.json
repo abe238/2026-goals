@@ -1,0 +1,278 @@
+{
+  "_meta": {
+    "models": {
+      "weeklyStreak": "Current week's check-in status with grace day tracking.",
+      "wins": "Individual achievements logged by the user.",
+      "goalAreas": "Life areas with individual progress tracking.",
+      "milestones": "Achievement badges unlocked through consistent progress."
+    },
+    "relationships": [
+      "Wins can be tagged with a GoalArea",
+      "GoalAreas track their own streak and win counts",
+      "Milestones are unlocked based on streak or win thresholds"
+    ]
+  },
+  "weeklyStreak": {
+    "weekStart": "2026-01-05",
+    "days": [
+      { "date": "2026-01-05", "status": "completed", "winsCount": 3 },
+      { "date": "2026-01-06", "status": "completed", "winsCount": 2 },
+      { "date": "2026-01-07", "status": "grace", "winsCount": 0 },
+      { "date": "2026-01-08", "status": "completed", "winsCount": 4 },
+      { "date": "2026-01-09", "status": "today", "winsCount": 1 },
+      { "date": "2026-01-10", "status": "future", "winsCount": 0 },
+      { "date": "2026-01-11", "status": "future", "winsCount": 0 }
+    ],
+    "currentStreak": 12,
+    "longestStreak": 23,
+    "graceDaysUsed": 1,
+    "graceDaysTotal": 3
+  },
+  "wins": [
+    {
+      "id": "win-001",
+      "text": "Did 20 min heavy dumbbells even though I was tired",
+      "timestamp": "2026-01-09T07:45:00",
+      "goalAreaId": "physical-health",
+      "isFavorite": true,
+      "source": "voice"
+    },
+    {
+      "id": "win-002",
+      "text": "Let my team handle the crisis without stepping in to 'save' them",
+      "timestamp": "2026-01-08T18:30:00",
+      "goalAreaId": "work-leadership",
+      "isFavorite": true,
+      "source": "voice"
+    },
+    {
+      "id": "win-003",
+      "text": "Built a Lego set with Ian, phone was in the other room the whole time",
+      "timestamp": "2026-01-08T20:15:00",
+      "goalAreaId": "family-ian",
+      "isFavorite": true,
+      "source": "voice"
+    },
+    {
+      "id": "win-004",
+      "text": "Finished the quarterly strategy doc ahead of deadline",
+      "timestamp": "2026-01-08T17:00:00",
+      "goalAreaId": "work-strategic",
+      "isFavorite": false,
+      "source": "voice"
+    },
+    {
+      "id": "win-005",
+      "text": "Had a really good therapy session, felt heard",
+      "timestamp": "2026-01-06T15:00:00",
+      "goalAreaId": "mental-health",
+      "isFavorite": false,
+      "source": "voice"
+    },
+    {
+      "id": "win-006",
+      "text": "Meditated for 10 minutes before the kids woke up",
+      "timestamp": "2026-01-06T06:30:00",
+      "goalAreaId": "mental-health",
+      "isFavorite": false,
+      "source": "manual"
+    },
+    {
+      "id": "win-007",
+      "text": "Took a real lunch break away from my desk",
+      "timestamp": "2026-01-05T12:30:00",
+      "goalAreaId": "physical-health",
+      "isFavorite": false,
+      "source": "manual"
+    },
+    {
+      "id": "win-008",
+      "text": "Said no to a meeting that didn't need me",
+      "timestamp": "2026-01-05T10:00:00",
+      "goalAreaId": "work-leadership",
+      "isFavorite": true,
+      "source": "manual"
+    },
+    {
+      "id": "win-009",
+      "text": "Wrote 500 words for the newsletter draft",
+      "timestamp": "2026-01-05T21:00:00",
+      "goalAreaId": "content",
+      "isFavorite": false,
+      "source": "manual"
+    },
+    {
+      "id": "win-010",
+      "text": "Called Mom just to check in, no agenda",
+      "timestamp": "2026-01-04T19:00:00",
+      "goalAreaId": "relationships",
+      "isFavorite": false,
+      "source": "nudge"
+    },
+    {
+      "id": "win-011",
+      "text": "Went to bed before 11pm three nights in a row",
+      "timestamp": "2026-01-04T22:45:00",
+      "goalAreaId": "physical-health",
+      "isFavorite": false,
+      "source": "manual"
+    },
+    {
+      "id": "win-012",
+      "text": "Delegated the deployment to junior engineer instead of doing it myself",
+      "timestamp": "2026-01-03T16:00:00",
+      "goalAreaId": "work-leadership",
+      "isFavorite": true,
+      "source": "voice"
+    }
+  ],
+  "goalAreas": [
+    {
+      "id": "physical-health",
+      "name": "Physical Health",
+      "icon": "dumbbell",
+      "color": "emerald",
+      "weeklyTarget": 5,
+      "currentWeekWins": 3,
+      "totalWins": 24,
+      "currentStreak": 8,
+      "isActive": true
+    },
+    {
+      "id": "mental-health",
+      "name": "Mental Health",
+      "icon": "brain",
+      "color": "purple",
+      "weeklyTarget": 3,
+      "currentWeekWins": 2,
+      "totalWins": 15,
+      "currentStreak": 5,
+      "isActive": true
+    },
+    {
+      "id": "family-ian",
+      "name": "Family (Ian)",
+      "icon": "baby",
+      "color": "orange",
+      "weeklyTarget": 4,
+      "currentWeekWins": 1,
+      "totalWins": 18,
+      "currentStreak": 3,
+      "isActive": true
+    },
+    {
+      "id": "family-wife",
+      "name": "Family (Sarah)",
+      "icon": "heart",
+      "color": "pink",
+      "weeklyTarget": 2,
+      "currentWeekWins": 0,
+      "totalWins": 8,
+      "currentStreak": 0,
+      "isActive": false
+    },
+    {
+      "id": "work-strategic",
+      "name": "Work (Strategic)",
+      "icon": "target",
+      "color": "blue",
+      "weeklyTarget": 3,
+      "currentWeekWins": 1,
+      "totalWins": 12,
+      "currentStreak": 2,
+      "isActive": false
+    },
+    {
+      "id": "work-leadership",
+      "name": "Work (Leadership)",
+      "icon": "briefcase",
+      "color": "indigo",
+      "weeklyTarget": 3,
+      "currentWeekWins": 3,
+      "totalWins": 21,
+      "currentStreak": 6,
+      "isActive": true
+    },
+    {
+      "id": "content",
+      "name": "Content/Newsletter",
+      "icon": "pen",
+      "color": "amber",
+      "weeklyTarget": 2,
+      "currentWeekWins": 1,
+      "totalWins": 9,
+      "currentStreak": 1,
+      "isActive": false
+    },
+    {
+      "id": "relationships",
+      "name": "Relationships",
+      "icon": "users",
+      "color": "rose",
+      "weeklyTarget": 2,
+      "currentWeekWins": 0,
+      "totalWins": 6,
+      "currentStreak": 0,
+      "isActive": false
+    }
+  ],
+  "milestones": [
+    {
+      "id": "milestone-001",
+      "type": "streak",
+      "value": 7,
+      "label": "First Week",
+      "unlockedAt": "2025-12-20T00:00:00",
+      "icon": "flame"
+    },
+    {
+      "id": "milestone-002",
+      "type": "wins",
+      "value": 10,
+      "label": "10 Wins",
+      "unlockedAt": "2025-12-18T00:00:00",
+      "icon": "trophy"
+    },
+    {
+      "id": "milestone-003",
+      "type": "wins",
+      "value": 50,
+      "label": "50 Wins",
+      "unlockedAt": "2026-01-02T00:00:00",
+      "icon": "medal"
+    },
+    {
+      "id": "milestone-004",
+      "type": "streak",
+      "value": 14,
+      "label": "Two Weeks",
+      "unlockedAt": null,
+      "icon": "zap"
+    },
+    {
+      "id": "milestone-005",
+      "type": "wins",
+      "value": 100,
+      "label": "Century",
+      "unlockedAt": null,
+      "icon": "crown"
+    },
+    {
+      "id": "milestone-006",
+      "type": "streak",
+      "value": 30,
+      "label": "Monthly Master",
+      "unlockedAt": null,
+      "icon": "star"
+    }
+  ],
+  "stats": {
+    "totalWins": 67,
+    "currentStreak": 12,
+    "longestStreak": 23,
+    "thisWeekWins": 10,
+    "graceDaysRemaining": 2,
+    "milestonesUnlocked": 3
+  },
+  "weeklyFocus": ["physical-health", "mental-health", "work-leadership"]
+}

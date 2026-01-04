@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "models": {
+      "nudges": "An outbound message sent to encourage engagement—either scheduled (morning focus, evening prompt) or triggered (wins celebration, welcome back after absence). Always warm, never guilt-inducing.",
+      "celebrations": "A record of when a Win was celebrated with the celebration overlay. Captures the moment of recognition and encouragement.",
+      "nudgePreferences": "User settings that control when and how nudges are delivered—timing, frequency, and which types are enabled."
+    },
+    "relationships": [
+      "Nudges may reference a Win when celebrating an achievement",
+      "Celebrations always link to a specific Win that was recognized",
+      "NudgePreferences control which types of Nudges get sent"
+    ]
+  },
+  "nudges": [
+    {
+      "id": "nudge-001",
+      "type": "morning-focus",
+      "message": "Good morning! What's the one thing that would make today a win?",
+      "sentAt": "2024-01-15T07:30:00Z",
+      "status": "acted-on",
+      "actionTaken": "Completed morning check-in"
+    },
+    {
+      "id": "nudge-002",
+      "type": "evening-reflection",
+      "message": "Day's winding down. Anything worth celebrating today?",
+      "sentAt": "2024-01-14T20:00:00Z",
+      "status": "seen",
+      "actionTaken": null
+    },
+    {
+      "id": "nudge-003",
+      "type": "wins-celebration",
+      "message": "You did it! That's 3 weeks of consistent workouts. Your body thanks you.",
+      "sentAt": "2024-01-13T18:45:00Z",
+      "status": "acted-on",
+      "actionTaken": "Viewed win in Wins Vault",
+      "winId": "win-007"
+    },
+    {
+      "id": "nudge-004",
+      "type": "welcome-back",
+      "message": "Hey, haven't heard from you in a few days. No pressure—just checking in. Ready when you are.",
+      "sentAt": "2024-01-12T10:00:00Z",
+      "status": "acted-on",
+      "actionTaken": "Opened app and did quick check-in"
+    },
+    {
+      "id": "nudge-005",
+      "type": "morning-focus",
+      "message": "New week, fresh start. What's one small thing you can do for yourself today?",
+      "sentAt": "2024-01-15T07:30:00Z",
+      "status": "pending",
+      "actionTaken": null
+    },
+    {
+      "id": "nudge-006",
+      "type": "wins-celebration",
+      "message": "Look at you! Published that newsletter draft you've been sitting on. That took courage.",
+      "sentAt": "2024-01-11T14:22:00Z",
+      "status": "seen",
+      "actionTaken": null,
+      "winId": "win-012"
+    },
+    {
+      "id": "nudge-007",
+      "type": "streak-milestone",
+      "message": "4-week streak on Mental Health! You're building something real here.",
+      "sentAt": "2024-01-10T09:00:00Z",
+      "status": "acted-on",
+      "actionTaken": "Shared streak on social"
+    }
+  ],
+  "celebrations": [
+    {
+      "id": "celeb-001",
+      "winId": "win-007",
+      "winTitle": "3-week workout streak",
+      "goalArea": "Physical Health",
+      "celebratedAt": "2024-01-13T18:45:00Z",
+      "encouragement": "Consistency beats perfection. You're proving that every week."
+    },
+    {
+      "id": "celeb-002",
+      "winId": "win-012",
+      "winTitle": "Published newsletter draft",
+      "goalArea": "Content/Newsletter",
+      "celebratedAt": "2024-01-11T14:22:00Z",
+      "encouragement": "Shipping beats perfecting. Your voice matters."
+    },
+    {
+      "id": "celeb-003",
+      "winId": "win-015",
+      "winTitle": "Had difficult conversation with team member",
+      "goalArea": "Work (Leadership)",
+      "celebratedAt": "2024-01-09T16:30:00Z",
+      "encouragement": "Leadership isn't easy. You showed up anyway."
+    },
+    {
+      "id": "celeb-004",
+      "winId": "win-018",
+      "winTitle": "Played board game with Ian for an hour",
+      "goalArea": "Family (Ian)",
+      "celebratedAt": "2024-01-08T20:15:00Z",
+      "encouragement": "He won't remember the game. He'll remember you were there."
+    },
+    {
+      "id": "celeb-005",
+      "winId": "win-021",
+      "winTitle": "Took a real lunch break outside",
+      "goalArea": "Mental Health",
+      "celebratedAt": "2024-01-07T13:00:00Z",
+      "encouragement": "Small acts of self-care add up. This counts."
+    }
+  ],
+  "nudgePreferences": {
+    "morningFocus": {
+      "enabled": true,
+      "time": "07:30",
+      "days": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+    },
+    "eveningReflection": {
+      "enabled": true,
+      "time": "20:00",
+      "days": ["monday", "wednesday", "friday"]
+    },
+    "winsCelebration": {
+      "enabled": true,
+      "celebrateImmediately": true
+    },
+    "welcomeBack": {
+      "enabled": true,
+      "afterDaysInactive": 3
+    },
+    "streakMilestones": {
+      "enabled": true,
+      "milestones": [2, 4, 8, 12]
+    }
+  }
+}

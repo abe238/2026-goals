@@ -1,0 +1,210 @@
+{
+  "_meta": {
+    "models": {
+      "voiceCaptures": "Brain dumps captured via voice. Each contains a transcript and AI-extracted items.",
+      "extractedItems": "Structured items pulled from voice captures—wins, chores, events, ideas, etc.",
+      "captureSession": "The current recording session with live waveform and status.",
+      "captureStats": "Aggregate statistics about voice capture usage."
+    },
+    "relationships": [
+      "Each VoiceCapture contains multiple ExtractedItems",
+      "ExtractedItems can link to GoalAreas for categorization",
+      "CaptureSession becomes a VoiceCapture when saved"
+    ]
+  },
+  "currentSession": null,
+  "recentCaptures": [
+    {
+      "id": "capture-001",
+      "timestamp": "2026-01-05T07:45:00",
+      "duration": 47,
+      "transcript": "Just finished my morning workout. Did 20 minutes of heavy dumbbells even though I was really tired. Also, I need to remember to call the plumber about that leak—it's been dripping for a week now. Oh, and Marcus texted about doing a nature walk this weekend, that sounds great.",
+      "extractedItems": [
+        {
+          "id": "item-001",
+          "type": "win",
+          "text": "Did 20 min heavy dumbbells even though I was tired",
+          "confidence": "high",
+          "goalAreaId": "physical-health",
+          "suggestedDate": null,
+          "isEdited": false,
+          "originalText": "Did 20 minutes of heavy dumbbells even though I was really tired"
+        },
+        {
+          "id": "item-002",
+          "type": "chore",
+          "text": "Call plumber about the leak",
+          "confidence": "high",
+          "goalAreaId": null,
+          "suggestedDate": "2026-01-06",
+          "isEdited": false,
+          "originalText": "call the plumber about that leak—it's been dripping for a week now"
+        },
+        {
+          "id": "item-003",
+          "type": "event",
+          "text": "Nature walk with Marcus",
+          "confidence": "medium",
+          "goalAreaId": "physical-health",
+          "suggestedDate": "2026-01-11",
+          "isEdited": false,
+          "originalText": "Marcus texted about doing a nature walk this weekend"
+        }
+      ],
+      "status": "saved",
+      "audioUrl": "/audio/capture-001.m4a"
+    },
+    {
+      "id": "capture-002",
+      "timestamp": "2026-01-04T22:30:00",
+      "duration": 62,
+      "transcript": "Good day overall. Had a really productive 1:1 with my director, talked about Q1 goals and team visibility. I let my team handle that incident today without stepping in to save them—that was hard but felt right. Built Legos with Ian for like an hour after dinner, my phone was in the other room the whole time. Tomorrow I want to be fully present at pickup.",
+      "extractedItems": [
+        {
+          "id": "item-004",
+          "type": "win",
+          "text": "Let my team handle the crisis without stepping in to 'save' them",
+          "confidence": "high",
+          "goalAreaId": "work-leadership",
+          "suggestedDate": null,
+          "isEdited": false,
+          "originalText": "I let my team handle that incident today without stepping in to save them"
+        },
+        {
+          "id": "item-005",
+          "type": "win",
+          "text": "Built a Lego set with Ian, phone was in the other room the whole time",
+          "confidence": "high",
+          "goalAreaId": "family-ian",
+          "suggestedDate": null,
+          "isEdited": false,
+          "originalText": "Built Legos with Ian for like an hour after dinner, my phone was in the other room the whole time"
+        },
+        {
+          "id": "item-006",
+          "type": "note",
+          "text": "Be fully present with Ian at pickup today",
+          "confidence": "high",
+          "goalAreaId": "family-ian",
+          "suggestedDate": "2026-01-05",
+          "isEdited": true,
+          "originalText": "Tomorrow I want to be fully present at pickup"
+        }
+      ],
+      "status": "saved",
+      "audioUrl": "/audio/capture-002.m4a"
+    },
+    {
+      "id": "capture-003",
+      "timestamp": "2026-01-03T17:15:00",
+      "duration": 28,
+      "transcript": "Just wrapped the quarterly strategy doc ahead of deadline! Feel good about that. Had an idea for a newsletter topic—something about how senior ICs can build visibility without being annoying about it. Need to schedule Ian's dentist appointment, his 6-month checkup is overdue.",
+      "extractedItems": [
+        {
+          "id": "item-007",
+          "type": "win",
+          "text": "Finished the quarterly strategy doc ahead of deadline",
+          "confidence": "high",
+          "goalAreaId": "work-strategic",
+          "suggestedDate": null,
+          "isEdited": false,
+          "originalText": "Just wrapped the quarterly strategy doc ahead of deadline"
+        },
+        {
+          "id": "item-008",
+          "type": "idea",
+          "text": "Newsletter: How senior ICs can build visibility without being annoying",
+          "confidence": "high",
+          "goalAreaId": "content",
+          "suggestedDate": null,
+          "isEdited": false,
+          "originalText": "something about how senior ICs can build visibility without being annoying about it"
+        },
+        {
+          "id": "item-009",
+          "type": "chore",
+          "text": "Schedule Ian's dentist appointment",
+          "confidence": "high",
+          "goalAreaId": "family-ian",
+          "suggestedDate": "2026-01-10",
+          "isEdited": false,
+          "originalText": "Need to schedule Ian's dentist appointment, his 6-month checkup is overdue"
+        }
+      ],
+      "status": "saved",
+      "audioUrl": "/audio/capture-003.m4a"
+    },
+    {
+      "id": "capture-004",
+      "timestamp": "2026-01-02T14:30:00",
+      "duration": 35,
+      "transcript": "Had a really good therapy session today, felt heard for once. Sarah mentioned wanting to do a real date night soon—no work talk allowed. I should look into that new restaurant downtown. Also thinking about whether we should get Ian into swimming lessons this spring.",
+      "extractedItems": [
+        {
+          "id": "item-010",
+          "type": "win",
+          "text": "Had a really good therapy session, felt heard",
+          "confidence": "high",
+          "goalAreaId": "mental-health",
+          "suggestedDate": null,
+          "isEdited": false,
+          "originalText": "Had a really good therapy session today, felt heard for once"
+        },
+        {
+          "id": "item-011",
+          "type": "event",
+          "text": "Date night with Sarah",
+          "confidence": "medium",
+          "goalAreaId": "family-wife",
+          "suggestedDate": null,
+          "isEdited": false,
+          "originalText": "Sarah mentioned wanting to do a real date night soon"
+        },
+        {
+          "id": "item-012",
+          "type": "idea",
+          "text": "Look into swimming lessons for Ian this spring",
+          "confidence": "medium",
+          "goalAreaId": "family-ian",
+          "suggestedDate": null,
+          "isEdited": false,
+          "originalText": "thinking about whether we should get Ian into swimming lessons this spring"
+        }
+      ],
+      "status": "saved",
+      "audioUrl": "/audio/capture-004.m4a"
+    }
+  ],
+  "stats": {
+    "totalCaptures": 23,
+    "totalDuration": 847,
+    "itemsExtracted": 67,
+    "byType": {
+      "win": 24,
+      "chore": 15,
+      "event": 12,
+      "idea": 9,
+      "person": 4,
+      "work": 2,
+      "note": 1
+    }
+  },
+  "goalAreas": [
+    { "id": "physical-health", "name": "Physical Health", "icon": "dumbbell", "color": "green" },
+    { "id": "mental-health", "name": "Mental Health", "icon": "brain", "color": "purple" },
+    { "id": "family-ian", "name": "Family (Ian)", "icon": "baby", "color": "orange" },
+    { "id": "family-wife", "name": "Family (Wife)", "icon": "heart", "color": "pink" },
+    { "id": "work-strategic", "name": "Work (Strategic)", "icon": "target", "color": "blue" },
+    { "id": "work-leadership", "name": "Work (Leadership)", "icon": "briefcase", "color": "indigo" },
+    { "id": "content", "name": "Content/Newsletter", "icon": "pen", "color": "amber" }
+  ],
+  "itemTypes": [
+    { "type": "win", "label": "Win", "icon": "trophy" },
+    { "type": "chore", "label": "Chore", "icon": "clipboard-list" },
+    { "type": "event", "label": "Event", "icon": "calendar" },
+    { "type": "idea", "label": "Idea", "icon": "lightbulb" },
+    { "type": "person", "label": "Person", "icon": "user" },
+    { "type": "work", "label": "Work Item", "icon": "briefcase" },
+    { "type": "note", "label": "Note", "icon": "sticky-note" }
+  ]
+}

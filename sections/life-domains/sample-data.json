@@ -1,0 +1,277 @@
+{
+  "_meta": {
+    "models": {
+      "events": "Calendar events and activities.",
+      "people": "Relationships and connection tracking.",
+      "ideas": "Captured ideas, tech to explore, and curiosities.",
+      "chores": "Non-negotiable tasks with deadlines."
+    },
+    "relationships": [
+      "Events can involve People",
+      "Ideas can become Chores or Events",
+      "Chores can be recurring"
+    ]
+  },
+  "activeTab": "chores",
+  "today": "2026-01-09",
+  "currentTimeOfDay": "afternoon",
+  "events": [
+    {
+      "id": "ev-001",
+      "title": "Team standup",
+      "date": "2026-01-09",
+      "time": "09:30",
+      "timeOfDay": "morning",
+      "isAllDay": false,
+      "isRecurring": true,
+      "category": "work"
+    },
+    {
+      "id": "ev-002",
+      "title": "Lunch with Marcus",
+      "date": "2026-01-09",
+      "time": "12:00",
+      "timeOfDay": "afternoon",
+      "location": "Café Luna",
+      "isAllDay": false,
+      "isRecurring": false,
+      "category": "personal"
+    },
+    {
+      "id": "ev-003",
+      "title": "Ian's soccer practice",
+      "date": "2026-01-09",
+      "time": "16:30",
+      "timeOfDay": "afternoon",
+      "location": "Riverside Park",
+      "isAllDay": false,
+      "isRecurring": true,
+      "category": "family"
+    },
+    {
+      "id": "ev-004",
+      "title": "Date night with Sarah",
+      "date": "2026-01-10",
+      "time": "19:00",
+      "timeOfDay": "evening",
+      "isAllDay": false,
+      "isRecurring": false,
+      "category": "family"
+    },
+    {
+      "id": "ev-005",
+      "title": "Quarterly planning offsite",
+      "date": "2026-01-13",
+      "timeOfDay": "morning",
+      "isAllDay": true,
+      "isRecurring": false,
+      "category": "work"
+    },
+    {
+      "id": "ev-006",
+      "title": "Mom's birthday",
+      "date": "2026-01-15",
+      "timeOfDay": "morning",
+      "isAllDay": true,
+      "isRecurring": false,
+      "category": "family"
+    }
+  ],
+  "people": [
+    {
+      "id": "p-001",
+      "name": "Mom",
+      "relationship": "Family",
+      "avatarInitials": "MO",
+      "lastConnected": "2026-01-04",
+      "connectionHealth": "good",
+      "nextAction": "Birthday coming up Jan 15",
+      "notes": "Called to check in, she's doing well"
+    },
+    {
+      "id": "p-002",
+      "name": "Marcus Chen",
+      "relationship": "Friend & Colleague",
+      "avatarInitials": "MC",
+      "lastConnected": "2026-01-09",
+      "connectionHealth": "strong",
+      "notes": "Lunch today"
+    },
+    {
+      "id": "p-003",
+      "name": "Jake Thompson",
+      "relationship": "Old Friend",
+      "avatarInitials": "JT",
+      "lastConnected": "2025-12-01",
+      "connectionHealth": "needs-attention",
+      "nextAction": "Haven't caught up in over a month"
+    },
+    {
+      "id": "p-004",
+      "name": "Dr. Williams",
+      "relationship": "Therapist",
+      "avatarInitials": "DW",
+      "lastConnected": "2026-01-06",
+      "connectionHealth": "strong",
+      "notes": "Great session on boundaries"
+    },
+    {
+      "id": "p-005",
+      "name": "Uncle Robert",
+      "relationship": "Family",
+      "avatarInitials": "UR",
+      "lastConnected": "2025-11-28",
+      "connectionHealth": "overdue",
+      "nextAction": "Should call, been too long"
+    },
+    {
+      "id": "p-006",
+      "name": "Lisa Park",
+      "relationship": "Neighbor",
+      "avatarInitials": "LP",
+      "lastConnected": "2026-01-02",
+      "connectionHealth": "good"
+    }
+  ],
+  "ideas": [
+    {
+      "id": "idea-001",
+      "title": "Build a voice-controlled home dashboard",
+      "description": "Use Raspberry Pi + local LLM for privacy-first smart home",
+      "category": "project",
+      "capturedAt": "2026-01-08",
+      "source": "voice",
+      "isFavorite": true
+    },
+    {
+      "id": "idea-002",
+      "title": "Try Cursor AI for coding",
+      "description": "Everyone's talking about it, worth exploring",
+      "category": "tech",
+      "capturedAt": "2026-01-07",
+      "source": "manual",
+      "isFavorite": false,
+      "link": "https://cursor.sh"
+    },
+    {
+      "id": "idea-003",
+      "title": "Write about neurodivergent productivity",
+      "description": "Newsletter topic: anti-guilt systems, grace days concept",
+      "category": "project",
+      "capturedAt": "2026-01-05",
+      "source": "voice",
+      "isFavorite": true
+    },
+    {
+      "id": "idea-004",
+      "title": "Learn Rust for systems programming",
+      "description": "Memory safety without garbage collection",
+      "category": "learn",
+      "capturedAt": "2026-01-03",
+      "source": "manual",
+      "isFavorite": false
+    },
+    {
+      "id": "idea-005",
+      "title": "Family photo wall project",
+      "description": "Digital frame that cycles through memories, maybe with AI captions",
+      "category": "someday",
+      "capturedAt": "2025-12-28",
+      "source": "voice",
+      "isFavorite": false
+    },
+    {
+      "id": "idea-006",
+      "title": "Explore local hiking trails",
+      "description": "Found a map of trails within 30 min drive",
+      "category": "explore",
+      "capturedAt": "2025-12-20",
+      "source": "manual",
+      "isFavorite": true
+    }
+  ],
+  "chores": [
+    {
+      "id": "ch-001",
+      "title": "Pay credit card bill",
+      "dueDate": "2026-01-10",
+      "urgency": "soon",
+      "percentageRemaining": 25,
+      "isRecurring": true,
+      "recurringPattern": "monthly",
+      "category": "finance",
+      "isCompleted": false
+    },
+    {
+      "id": "ch-002",
+      "title": "Submit expense report",
+      "dueDate": "2026-01-09",
+      "dueTime": "17:00",
+      "urgency": "urgent",
+      "percentageRemaining": 10,
+      "isRecurring": false,
+      "category": "work",
+      "isCompleted": false
+    },
+    {
+      "id": "ch-003",
+      "title": "Schedule car maintenance",
+      "dueDate": "2026-01-08",
+      "urgency": "overdue",
+      "percentageRemaining": 0,
+      "isRecurring": false,
+      "category": "home",
+      "isCompleted": false
+    },
+    {
+      "id": "ch-004",
+      "title": "Renew gym membership",
+      "dueDate": "2026-01-15",
+      "urgency": "upcoming",
+      "percentageRemaining": 60,
+      "isRecurring": true,
+      "recurringPattern": "yearly",
+      "category": "health",
+      "isCompleted": false
+    },
+    {
+      "id": "ch-005",
+      "title": "Take out recycling",
+      "dueDate": "2026-01-09",
+      "urgency": "soon",
+      "percentageRemaining": 20,
+      "isRecurring": true,
+      "recurringPattern": "weekly",
+      "category": "home",
+      "isCompleted": false
+    },
+    {
+      "id": "ch-006",
+      "title": "Review and sign school forms",
+      "dueDate": "2026-01-12",
+      "urgency": "upcoming",
+      "percentageRemaining": 50,
+      "isRecurring": false,
+      "category": "family",
+      "isCompleted": false
+    },
+    {
+      "id": "ch-007",
+      "title": "Book dentist appointment",
+      "dueDate": "2026-01-20",
+      "urgency": "relaxed",
+      "percentageRemaining": 80,
+      "isRecurring": false,
+      "category": "health",
+      "isCompleted": false
+    }
+  ],
+  "stats": {
+    "eventsToday": 3,
+    "eventsThisWeek": 6,
+    "peopleNeedingConnection": 2,
+    "ideasCount": 6,
+    "choresDueToday": 2,
+    "choresOverdue": 1
+  }
+}

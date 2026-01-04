@@ -1,0 +1,339 @@
+{
+  "_meta": {
+    "models": {
+      "goalAreas": "The 7 life areas you're tracking progress in. Each has a weekly target and current streak.",
+      "streaks": "Weekly progress tracking for each goal area. Streaks pause (not reset) when you miss a week.",
+      "wins": "Positive moments extracted from your check-ins and voice captures. Proof you're making progress.",
+      "events": "Upcoming activities and calendar items. Can involve people and relate to goal areas.",
+      "chores": "Non-negotiable tasks with hard deadlines. Visual urgency increases as deadlines approach.",
+      "checkIns": "Structured morning or evening reflections. Morning sets focus, evening captures wins.",
+      "todaysFocus": "Your single intention for today, set during last night's evening check-in or this morning.",
+      "timeContext": "Current time of day that determines which content surfaces (morning, evening, weekend).",
+      "welcomeBackState": "Tracks if you've been away and need the gentle welcome-back flow."
+    },
+    "relationships": [
+      "Each GoalArea has one active Streak tracking weekly progress",
+      "Wins belong to a GoalArea and come from CheckIns",
+      "Events may involve a Person and relate to a GoalArea",
+      "Chores may relate to a GoalArea",
+      "CheckIns set today's focus and capture wins"
+    ]
+  },
+  "timeContext": {
+    "current": "morning",
+    "timestamp": "2026-01-05T08:20:00",
+    "greeting": "Good morning",
+    "dayOfWeek": "Monday"
+  },
+  "welcomeBackState": {
+    "isWelcomeBack": false,
+    "daysAway": 0,
+    "lastCheckIn": "2026-01-04T22:15:00"
+  },
+  "todaysFocus": {
+    "id": "focus-001",
+    "text": "Be fully present with Ian at pickup today",
+    "goalAreaId": "family-ian",
+    "setAt": "2026-01-04T22:15:00",
+    "setDuring": "evening"
+  },
+  "goalAreas": [
+    {
+      "id": "physical-health",
+      "name": "Physical Health",
+      "icon": "dumbbell",
+      "weeklyTarget": 3,
+      "color": "green"
+    },
+    {
+      "id": "mental-health",
+      "name": "Mental Health",
+      "icon": "brain",
+      "weeklyTarget": 2,
+      "color": "purple"
+    },
+    {
+      "id": "family-ian",
+      "name": "Family (Ian)",
+      "icon": "baby",
+      "weeklyTarget": 3,
+      "color": "orange"
+    },
+    {
+      "id": "family-wife",
+      "name": "Family (Wife)",
+      "icon": "heart",
+      "weeklyTarget": 3,
+      "color": "pink"
+    },
+    {
+      "id": "work-strategic",
+      "name": "Work (Strategic)",
+      "icon": "target",
+      "weeklyTarget": 3,
+      "color": "blue"
+    },
+    {
+      "id": "work-leadership",
+      "name": "Work (Leadership)",
+      "icon": "briefcase",
+      "weeklyTarget": 2,
+      "color": "indigo"
+    },
+    {
+      "id": "content",
+      "name": "Content/Newsletter",
+      "icon": "pen",
+      "weeklyTarget": 1,
+      "color": "amber"
+    }
+  ],
+  "streaks": [
+    {
+      "id": "streak-physical",
+      "goalAreaId": "physical-health",
+      "currentWeekCount": 2,
+      "weeklyTarget": 3,
+      "totalWeeks": 4,
+      "status": "active",
+      "graceDayUsed": false
+    },
+    {
+      "id": "streak-mental",
+      "goalAreaId": "mental-health",
+      "currentWeekCount": 1,
+      "weeklyTarget": 2,
+      "totalWeeks": 3,
+      "status": "active",
+      "graceDayUsed": false
+    },
+    {
+      "id": "streak-ian",
+      "goalAreaId": "family-ian",
+      "currentWeekCount": 3,
+      "weeklyTarget": 3,
+      "totalWeeks": 6,
+      "status": "complete",
+      "graceDayUsed": false
+    },
+    {
+      "id": "streak-wife",
+      "goalAreaId": "family-wife",
+      "currentWeekCount": 2,
+      "weeklyTarget": 3,
+      "totalWeeks": 4,
+      "status": "active",
+      "graceDayUsed": false
+    },
+    {
+      "id": "streak-strategic",
+      "goalAreaId": "work-strategic",
+      "currentWeekCount": 1,
+      "weeklyTarget": 3,
+      "totalWeeks": 2,
+      "status": "active",
+      "graceDayUsed": true
+    },
+    {
+      "id": "streak-leadership",
+      "goalAreaId": "work-leadership",
+      "currentWeekCount": 2,
+      "weeklyTarget": 2,
+      "totalWeeks": 5,
+      "status": "complete",
+      "graceDayUsed": false
+    },
+    {
+      "id": "streak-content",
+      "goalAreaId": "content",
+      "currentWeekCount": 0,
+      "weeklyTarget": 1,
+      "totalWeeks": 1,
+      "status": "paused",
+      "graceDayUsed": true
+    }
+  ],
+  "wins": [
+    {
+      "id": "win-001",
+      "text": "Did 20 min heavy dumbbells even though I was tired",
+      "goalAreaId": "physical-health",
+      "capturedAt": "2026-01-05T07:30:00",
+      "source": "check-in"
+    },
+    {
+      "id": "win-002",
+      "text": "Let my team handle the crisis without stepping in to 'save' them",
+      "goalAreaId": "work-leadership",
+      "capturedAt": "2026-01-04T22:15:00",
+      "source": "check-in"
+    },
+    {
+      "id": "win-003",
+      "text": "Built a Lego set with Ian, phone was in the other room the whole time",
+      "goalAreaId": "family-ian",
+      "capturedAt": "2026-01-04T22:15:00",
+      "source": "check-in"
+    },
+    {
+      "id": "win-004",
+      "text": "Actual date night with Sarah. No work talk.",
+      "goalAreaId": "family-wife",
+      "capturedAt": "2026-01-03T22:30:00",
+      "source": "check-in"
+    },
+    {
+      "id": "win-005",
+      "text": "Finished the quarterly strategy doc ahead of deadline",
+      "goalAreaId": "work-strategic",
+      "capturedAt": "2026-01-03T17:00:00",
+      "source": "voice-capture"
+    },
+    {
+      "id": "win-006",
+      "text": "15 min Peloton ride before Ian woke up",
+      "goalAreaId": "physical-health",
+      "capturedAt": "2026-01-02T06:45:00",
+      "source": "check-in"
+    },
+    {
+      "id": "win-007",
+      "text": "Had a really good therapy session, felt heard",
+      "goalAreaId": "mental-health",
+      "capturedAt": "2026-01-02T14:00:00",
+      "source": "voice-capture"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-001",
+      "title": "Ian school drop-off",
+      "date": "2026-01-05",
+      "time": "08:15",
+      "isAllDay": false,
+      "goalAreaId": "family-ian",
+      "personId": null,
+      "recurring": true,
+      "notes": null
+    },
+    {
+      "id": "event-002",
+      "title": "1:1 with Director",
+      "date": "2026-01-05",
+      "time": "10:00",
+      "isAllDay": false,
+      "goalAreaId": "work-leadership",
+      "personId": null,
+      "recurring": true,
+      "notes": "Discuss Q1 goals and team visibility"
+    },
+    {
+      "id": "event-003",
+      "title": "Ian pickup",
+      "date": "2026-01-05",
+      "time": "17:00",
+      "isAllDay": false,
+      "goalAreaId": "family-ian",
+      "personId": null,
+      "recurring": true,
+      "notes": null
+    },
+    {
+      "id": "event-004",
+      "title": "Nature walk with Marcus",
+      "date": "2026-01-06",
+      "time": "09:00",
+      "isAllDay": false,
+      "goalAreaId": "physical-health",
+      "personId": "person-marcus",
+      "recurring": false,
+      "notes": "Bringing the kids, meeting at Rancho San Antonio"
+    },
+    {
+      "id": "event-005",
+      "title": "Team all-hands",
+      "date": "2026-01-07",
+      "time": "14:00",
+      "isAllDay": false,
+      "goalAreaId": "work-leadership",
+      "personId": null,
+      "recurring": true,
+      "notes": "Presenting Q4 wins and Q1 roadmap"
+    }
+  ],
+  "chores": [
+    {
+      "id": "chore-001",
+      "title": "Call plumber about the leak",
+      "dueDate": "2026-01-06",
+      "urgency": "high",
+      "urgencyColor": "red",
+      "daysUntilDue": 1,
+      "goalAreaId": null,
+      "isComplete": false,
+      "notes": "Kitchen sink has been dripping for a week"
+    },
+    {
+      "id": "chore-002",
+      "title": "Schedule Ian's dentist appointment",
+      "dueDate": "2026-01-10",
+      "urgency": "medium",
+      "urgencyColor": "amber",
+      "daysUntilDue": 5,
+      "goalAreaId": "family-ian",
+      "isComplete": false,
+      "notes": "6-month checkup overdue"
+    },
+    {
+      "id": "chore-003",
+      "title": "Renew car registration",
+      "dueDate": "2026-01-15",
+      "urgency": "low",
+      "urgencyColor": "green",
+      "daysUntilDue": 10,
+      "goalAreaId": null,
+      "isComplete": false,
+      "notes": null
+    },
+    {
+      "id": "chore-004",
+      "title": "Submit expense report",
+      "dueDate": "2026-01-08",
+      "urgency": "medium",
+      "urgencyColor": "amber",
+      "daysUntilDue": 3,
+      "goalAreaId": "work-strategic",
+      "isComplete": false,
+      "notes": "Q4 travel expenses"
+    }
+  ],
+  "checkIns": [
+    {
+      "id": "checkin-001",
+      "type": "evening",
+      "date": "2026-01-04",
+      "timestamp": "2026-01-04T22:15:00",
+      "responses": {
+        "howWasToday": "Good day overall. Got some strategic work done in the morning before getting pulled into a small fire.",
+        "didYouExercise": "No, but I was active playing with Ian",
+        "anyWins": "Built Legos with Ian for an hour. Let team handle the incident without me.",
+        "qualityTime": "Yes, Ian time was great. Sarah and I watched a show together after he went to bed.",
+        "tomorrowFocus": "Be fully present with Ian at pickup today"
+      },
+      "winsExtracted": ["win-002", "win-003"],
+      "goalAreasLogged": ["family-ian", "work-leadership", "family-wife"]
+    }
+  ],
+  "priorityItem": {
+    "type": "chore",
+    "id": "chore-001",
+    "title": "Call plumber about the leak",
+    "reason": "Due tomorrow",
+    "urgency": "high"
+  },
+  "quickAddOptions": [
+    { "type": "chore", "label": "Add Chore", "icon": "clipboard-list" },
+    { "type": "event", "label": "Add Event", "icon": "calendar-plus" },
+    { "type": "idea", "label": "Add Idea", "icon": "lightbulb" }
+  ]
+}

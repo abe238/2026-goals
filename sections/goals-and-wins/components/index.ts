@@ -1,0 +1,1 @@
+export { GoalsAndWins } from './GoalsAndWins'
